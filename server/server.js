@@ -28,14 +28,25 @@ app.post("/chat", async (req, res) => {
       success: true,
       reply,
     });
-  } catch (error) {
-    console.error(error);
+ 
+} catch (error) {
+  console.error("FULL ERROR:");
+  console.error(error);
 
-    res.status(500).json({
-      success: false,
-      error: "Something went wrong.",
-    });
-  }
+  res.status(500).json({
+    success: false,
+    error: error.message,
+  });
+}
+} catch (error) {
+  console.error("FULL ERROR:");
+  console.error(error);
+
+  res.status(500).json({
+    success: false,
+    error: error.message,
+  });
+}
 });
 // Serve frontend
 app.use(express.static(path.join(__dirname, "../client")));
