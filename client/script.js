@@ -23,7 +23,7 @@ async function askQuestion() {
 
     try{
 
-        const response = await fetch("http://localhost:3000/chat",{
+        const response = await fetch("https://physics-bondhu.onrender.com/chat", {
 
             method:"POST",
 
