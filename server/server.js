@@ -38,6 +38,7 @@ app.post("/chat", async (req, res) => {
     error: error.message,
   });
 }
+});
 // Serve frontend
 app.use(express.static(path.join(__dirname, "../client")));
 app.get("/", (req, res) => {
